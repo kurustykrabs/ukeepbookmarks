@@ -1,0 +1,22 @@
+<%= form_for Bookmark.new do |f| %>
+  <%= f.text_field :category, placeholder:'Add your category here' %>
+  <%= f.submit 'Post' %>
+<% end %>
+<br>
+<%# <%= @bookmark.category %> %>
+
+  <% @user.bookmarks.each do |bookmark| %>
+    <%= bookmark.category %>
+
+  <%= form_for ([bookmark, @link]) do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit 'Save' %>
+  <% end %>
+
+  <% bookmark.links.each do |link| %>
+  <%= link.content %>
+  <% end %>
+
+<% end %>
+<br>
+<%= link_to 'Back', current_user %>

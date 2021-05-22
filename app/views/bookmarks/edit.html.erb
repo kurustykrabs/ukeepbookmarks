@@ -1,0 +1,6 @@
+<%= form_for @bookmark do |f| %>
+<%= f.text_field :category, placeholder:'Name your category here' %>
+<%= f.submit 'Save' %>
+<% end %>
+
+<%= @bookmark.category %>

@@ -15,4 +15,8 @@ delete '/logout', to: 'sessions#destroy'
 # users
 resources :users
 
+resources :bookmarks do
+  resources :links 
+end
+
 end
