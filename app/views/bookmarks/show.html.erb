@@ -16,7 +16,7 @@
     <br>
     <% bookmark.links.each do |link| %>
     <%= link.content %>
-    <br>
+    <%= link_to 'x', bookmark_link_path(@bookmark, link), method: :delete %>
     <% end %>
     <br>
 

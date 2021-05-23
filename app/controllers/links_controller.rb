@@ -21,6 +21,17 @@ class LinksController < ApplicationController
     end
 end
 
+def destroy
+  @link = Link.find(params[:id])
+  @link.destroy
+  redirect_to bookmark_path(current_user), notice: 'Your link has been deleted.'
+end
+
+def edit
+  @link = Link.find(params[:id])
+  @bookmark = @link.bookmark
+end
+
   private
 
   def link_params

@@ -16,7 +16,7 @@ delete '/logout', to: 'sessions#destroy'
 resources :users
 
 resources :bookmarks do
-  resources :links 
+  resources :links, :only => [:create, :destroy]
 end
 
 end
