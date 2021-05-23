@@ -7,16 +7,22 @@
   <% current_user.bookmarks.each do |bookmark| %>
     <%= bookmark.category %>
 
-  <%= form_for ([bookmark, @link]) do |f| %>
-    <%= f.text_field :content %>
-    <%= f.submit 'Save' %>
-  <% end %>
+    <%= form_for ([bookmark, @link]) do |f| %>
+      <%= f.text_field :content %>
+      <%= f.submit 'Save' %>
+    <% end %>
 
-  <% bookmark.links.each do |link| %>
-  <%= link.content %>
-  <br>
-  <% end %>
+    <p1>Your saved links:</p1>
+    <br>
+    <% bookmark.links.each do |link| %>
+    <%= link.content %>
+    <br>
+    <% end %>
+    <br>
 
-<% end %>
+    <%= link_to 'Edit category', edit_bookmark_path(bookmark) %>
+    <%= link_to 'Delete all', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure you want to delete? This will delete the category and it\'s links.' } %>
+    <br>
+  <% end %>
 <br>
 <%= link_to 'Back', current_user %>
