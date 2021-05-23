@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :validatable
   has_secure_password
-  # has_many : notes, dependent: :destroy
+  has_many :notes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
 
   before_save { self.email = email.downcase }

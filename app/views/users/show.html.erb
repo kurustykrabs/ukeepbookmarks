@@ -1,3 +1,5 @@
 <h1>Hi, <%= current_user.username %></h1>
 
-<%= link_to 'Bookmarks', bookmark_path(@current_user) %>
+<%= link_to 'Bookmarks', bookmark_path(current_user) %>
+<%= link_to 'Notes', note_path(current_user) %>
+<%= link_to 'Spotify playlist', users_path(current_user) %>

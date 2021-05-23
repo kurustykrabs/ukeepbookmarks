@@ -8,7 +8,7 @@
     <%= bookmark.category %>
 
     <%= form_for ([bookmark, @link]) do |f| %>
-      <%= f.text_field :content %>
+      <%= f.text_field :content, placeholder:'Add your favourite links here' %>
       <%= f.submit 'Save' %>
     <% end %>
 
@@ -17,6 +17,7 @@
     <% bookmark.links.each do |link| %>
     <%= link.content %>
     <%= link_to 'x', bookmark_link_path(@bookmark, link), method: :delete %>
+    <br>
     <% end %>
     <br>
 

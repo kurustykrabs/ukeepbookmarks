@@ -1,0 +1,6 @@
+<%= form_for @note do |f| %>
+<%= f.text_field :content, placeholder:'Update your note here.' %>
+<%= f.submit 'Save' %>
+<% end %>
+
+<%= @note.content %>

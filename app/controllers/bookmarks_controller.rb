@@ -13,6 +13,7 @@ class BookmarksController < ApplicationController
   end
 
   def show
+    # @user = User.find(params[:id])
     @bookmark = Bookmark.find(params[:id])
     @link = Link.new
   end

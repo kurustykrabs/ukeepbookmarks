@@ -1,0 +1,22 @@
+<%= form_for Note.new do |f| %>
+  <%= f.text_field :content, placeholder:'Make your note' %>
+  <%= f.submit 'Create' %>
+<% end %>
+
+
+<br>
+<p1>Notes</p1>
+<br>
+  <% current_user.notes.each do |note| %>
+    <%= note.content %>
+  <br>
+
+
+  <% end %>
+
+
+
+<br>
+  <%# <%= link_to 'Edit title', edit_note_path(note) %> %>
+  <%# <%= link_to 'Delete note', note_path(note), method: :delete, data: { confirm: 'Are you sure you want to delete? This will delete the note.' } %> %>
+<%= link_to 'Back', current_user %>

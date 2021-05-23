@@ -12,11 +12,16 @@ get '/login', to: 'sessions#new'
 post 'login', to: 'sessions#create'
 delete '/logout', to: 'sessions#destroy'
 
+# spotify
+# get '/auth/spotify/callback', to: 'users#spotify'
+
 # users
 resources :users
 
 resources :bookmarks do
   resources :links, :only => [:create, :destroy]
 end
+
+resources :notes
 
 end
